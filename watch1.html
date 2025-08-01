@@ -6,7 +6,6 @@
   <style>
     body { text-align: center; font-family: Arial; background: #111; color: #fff; padding: 50px; }
     #countdown { font-size: 48px; margin: 20px 0; color: #0f0; }
-    #skip-btn { display: none; margin-top: 30px; padding: 10px 20px; font-size: 20px; background: #28a745; color: white; border: none; border-radius: 10px; cursor: pointer; }
     .banner { width: 100%; max-width: 728px; height: 90px; margin: 20px auto; background: #444; line-height: 90px; color: #ccc; }
   </style>
 </head>
@@ -15,9 +14,8 @@
   <div class="banner">🔺 إعلان بانر أعلى 🔺</div>
 
   <h1>🔔 الرجاء الانتظار</h1>
-  <p>سيتم تفعيل زر المشاهدة بعد انتهاء العد التنازلي</p>
-  <div id="countdown">10</div>
-  <button id="skip-btn" onclick="window.location.href='watch2.html'">شاهد الآن</button>
+  <p>سيتم تحويلك تلقائيًا بعد انتهاء العد التنازلي</p>
+  <div id="countdown">5</div>
 
   <div class="banner">🔻 إعلان بانر أسفل 🔻</div>
 
@@ -28,18 +26,17 @@
     };
   </script>
 
-  <!-- عد تنازلي -->
+  <!-- عد تنازلي وتحويل تلقائي -->
   <script>
-    let count = 10;
+    let count = 5;
     const countdown = document.getElementById('countdown');
-    const btn = document.getElementById('skip-btn');
 
     const timer = setInterval(() => {
       count--;
       countdown.textContent = count;
-      if (count === 5) {
+      if (count === 0) {
         clearInterval(timer);
-        btn.style.display = 'inline-block';
+        window.location.href = 'watch2.html';
       }
     }, 1000);
   </script>
