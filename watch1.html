@@ -28,13 +28,13 @@
 
   <!-- عد تنازلي وتحويل تلقائي -->
   <script>
-    let count = 5;
+    let count = 10;
     const countdown = document.getElementById('countdown');
 
     const timer = setInterval(() => {
       count--;
       countdown.textContent = count;
-      if (count === 0) {
+      if (count === 5) {
         clearInterval(timer);
         window.location.href = 'watch2.html';
       }
