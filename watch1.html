@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+  <meta charset="UTF-8">
+  <title>انتظر قليلاً</title>
+  <style>
+    body { text-align: center; font-family: Arial; background: #111; color: #fff; padding: 50px; }
+    #countdown { font-size: 48px; margin: 20px 0; color: #0f0; }
+    #skip-btn { display: none; margin-top: 30px; padding: 10px 20px; font-size: 20px; background: #28a745; color: white; border: none; border-radius: 10px; cursor: pointer; }
+    .banner { width: 100%; max-width: 728px; height: 90px; margin: 20px auto; background: #444; line-height: 90px; color: #ccc; }
+  </style>
+</head>
+<body>
+
+  <div class="banner">🔺 إعلان بانر أعلى 🔺</div>
+
+  <h1>🔔 الرجاء الانتظار</h1>
+  <p>سيتم تفعيل زر المشاهدة بعد انتهاء العد التنازلي</p>
+  <div id="countdown">10</div>
+  <button id="skip-btn" onclick="window.location.href='watch2.html'">شاهد الآن</button>
+
+  <div class="banner">🔻 إعلان بانر أسفل 🔻</div>
+
+  <!-- Popunder Script (مثال Adcash أو PopAds) -->
+  <script>
+    window.onload = () => {
+      window.open('https://your-popunder-link.com', '_blank');
+    };
+  </script>
+
+  <!-- عد تنازلي -->
+  <script>
+    let count = 20;
+    const countdown = document.getElementById('countdown');
+    const btn = document.getElementById('skip-btn');
+
+    const timer = setInterval(() => {
+      count--;
+      countdown.textContent = count;
+      if (count === 5) {
+        clearInterval(timer);
+        btn.style.display = 'inline-block';
+      }
+    }, 1000);
+  </script>
+</body>
+</html>
