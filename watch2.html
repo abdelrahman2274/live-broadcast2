@@ -22,12 +22,16 @@
     let count = 5;
     const countdown = document.getElementById('countdown');
 
+    // استخراج الرابط النهائي
+    const urlParams = new URLSearchParams(window.location.search);
+    const finalLink = urlParams.get("link");
+
     const timer = setInterval(() => {
       count--;
       countdown.textContent = count;
-      if (count === 0) {
+      if (count === 0 && finalLink) {
         clearInterval(timer);
-        window.location.href =  finalLink;// ← عدل بالرابط الحقيقي
+        window.location.href = finalLink;
       }
     }, 1000);
   </script>
