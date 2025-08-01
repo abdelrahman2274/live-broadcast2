@@ -19,7 +19,7 @@
 
   <div class="banner">🔻 إعلان بانر أسفل 🔻</div>
 
-  <!-- Popunder Script (مثال Adcash أو PopAds) -->
+  <!-- Popunder Script -->
   <script>
     window.onload = () => {
       window.open('https://your-popunder-link.com', '_blank');
@@ -31,10 +31,14 @@
     let count = 10;
     const countdown = document.getElementById('countdown');
 
+    // استخراج link من عنوان الصفحة
+    const urlParams = new URLSearchParams(window.location.search);
+    const link = urlParams.get("link");
+
     const timer = setInterval(() => {
       count--;
       countdown.textContent = count;
-      if (count === 5) {
+      if (count === 5 && link) {
         clearInterval(timer);
         window.location.href = `watch2.html?link=${encodeURIComponent(link)}`;
       }
