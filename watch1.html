@@ -36,7 +36,7 @@
       countdown.textContent = count;
       if (count === 5) {
         clearInterval(timer);
-        window.location.href = 'watch2.html';
+        window.location.href = `watch2.html?link=${encodeURIComponent(link)}`;
       }
     }, 1000);
   </script>
